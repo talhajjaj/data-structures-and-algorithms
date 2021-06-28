@@ -101,7 +101,9 @@ const addValues = (arr, value) => {
 };
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
-  for(let i=0 ; i<times;i++)
+  for(let i=0 ; i<times;i++){
+  callback(arr,num);
+}
   return arr;
 };
 // i didnt know why it failed
@@ -127,8 +129,9 @@ const createList = (availableItems) => {
   // Solution code here...
   let newArr=[];
   availableItems.forEach(Item=>{
-  
-    newArr.push(Item);
+  if(Item.available===true){
+    newArr.push(Item.name);
+  }
   })
   return newArr;
   };
