@@ -20,6 +20,10 @@ Becomes:
 
 function transformToLis(obj){
   // Solution code here...
+let key = Object.keys(obj);
+return (key.map((element)=>{
+  return `<li>${element}: ${obj[element]}</li>`
+}))
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,6 +38,15 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
+  let count=0;
+   input.map(array=>{
+    array.map((number)=>{ 
+      if(target===number)
+      {count=count+1;}
+    
+  })
+});
+  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -48,8 +61,15 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
+  let sum=0;
+   input.map(array=>{
+    array.map((number)=>{ 
+      sum+=number;
+    
+  })
+});
+  return sum;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -64,7 +84,8 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
-};
+return input.map (element=> element.filter(element=>element%5 ===0 && typeof element === 'number')
+.map(element=> Math.pow(2,element)))};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
@@ -146,8 +167,12 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
-  let newArr=[];
-  newArr = data.reduce()
+  let newArr= data.reduce((a, b) => {
+    if(parseInt(a.height) < parseInt(b.height)) return a;
+    return b;
+  });
+
+  return newArr.name;
 };
 
 /* ------------------------------------------------------------------------------------------------
