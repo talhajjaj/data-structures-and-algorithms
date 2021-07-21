@@ -15,7 +15,6 @@ arr.map(str=>{
 })
 return arr.indexOf(strings);
 };
-  
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -48,6 +47,7 @@ const findHappiness = (arr) => {
     if(letters.includes(':)')) word.push(letters);
   });
   return word;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,6 +60,12 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
+  let newArr=[];
+  arr.map(element=>{
+let phoneNum=element.substring(1,4) + element.substring(6,9)+ element.substring(10,14)
+newArr.push(phoneNum)
+  })
+  return newArr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,7 +88,6 @@ const onlyOddChars = (str) => {
   return newArr;
 };
 
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 
 
@@ -91,6 +96,12 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
+  let newArr=true
+  for (let index =0; index<arr.length;index++){
+    if (arr[index]. includes(':)')!==true)
+    newArr=false
+  }
+  return newArr
 };
 
 /* ------------------------------------------------------------------------------------------------
