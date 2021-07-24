@@ -43,9 +43,9 @@ const findMax = (matrix) => {
      newArr=matrix[index][index2];
 
    }
+  }
    return newArr
- }
-
+ 
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,15 +64,14 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
-    let sum=0;
-    for (let index=0;index<matrix.length;index++){
-      for (let index2=0; index2<matrix[index2].length;index2){
-        sum=matrix[index][index2];
-      }
-    }
-    return sum 
+  let sum = 0
+  matrix.forEach(element => {
+    element.forEach(item => {
+      sum = sum + item
+    })
+  });
 
-  
+  return sum
 };
 
 
@@ -111,7 +110,6 @@ newArr.push(total);
 return newArr
 };
 
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -125,14 +123,14 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 const salesData = (hours, data) => {
   // Solution code here...
   let newArr=[]
-hours.forEach((hours,i)=>{
-let hourlySales={
-  sales: `${data[i]} cookies`,time: hours
- }
-newArr.push(hourlySales);
-})
-return newArr;
-
+  hours.forEach((hours,i)=>{
+  let hourlySales={
+    sales: `${data[i]} cookies`,time: hours
+   }
+  newArr.push(hourlySales);
+  })
+  return newArr;
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -160,6 +158,8 @@ const howManyTreats = (arr) => {
   // Solution code here...
   return arr[2].items[1].quantity;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
