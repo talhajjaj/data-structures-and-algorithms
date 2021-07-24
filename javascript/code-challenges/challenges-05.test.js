@@ -12,6 +12,7 @@ Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
+
   // Solution code here...
   let newArr = []
   newArr = people.map(item => {
@@ -20,14 +21,19 @@ const toLastNames = people => {
   return newArr
 };
 /* ------------------------------------------------------------------------------------------------
+
+/* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named addValues that, given an array of numbers as input, uses reduce to add the values in the array.
+Write a function named addValues that, 
+given an array of numbers as input,
+ uses reduce to add the values in the array.
 
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr) => {
   // Solution code here...
+
   let newArr = [];
   newArr = arr.reduce((number,value) => {
     number = number + value;
@@ -35,6 +41,9 @@ const addValues = (arr) => {
   },0)
   return newArr;
 };
+
+ 
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -50,6 +59,7 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 const addPurchases = (arr) => {
   // Solution code here...
+
   let newArr =[]
   newArr = arr.reduce((item,value)=>{
     return item + value.purchasePrice 
@@ -57,6 +67,7 @@ const addPurchases = (arr) => {
 
    return newArr
   
+
 
 };
 
@@ -76,7 +87,7 @@ const countNumberOfElements = (arr) => {
     return number
   },0)
   )
-};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -142,7 +153,6 @@ const returnNames = (arr) => {
 
 }, [])
 return newArr
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -158,6 +168,7 @@ const reversedString = (str) => {
 
   let newArr=[];
   newArr=str.split('');
+
   let reversed=newArr.reduce((acc,val)=>{
   return val+acc
 })
