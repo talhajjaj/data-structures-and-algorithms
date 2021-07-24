@@ -14,11 +14,14 @@ You can assume that neither firstName nor lastName will be blank
 const toLastNames = people => {
 
   // Solution code here...
-  return people.map((item) => {
-    return item.firstName + ' ' + item.lastName;
-  });
+  let newArr = []
+  newArr = people.map(item => {
+    return(item.firstName + ' ' + item.lastName)
+  })
+  return newArr
+};
+/* ------------------------------------------------------------------------------------------------
 
-}
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -30,14 +33,15 @@ given an array of numbers as input,
 
 const addValues = (arr) => {
   // Solution code here...
-  let newArr= [];
-  newArr=arr.reduce((number,value)=>{
-  number = number+value ;
-  });
 
-   return newArr;
-  
-}
+  let newArr = [];
+  newArr = arr.reduce((number,value) => {
+    number = number + value;
+    return number
+  },0)
+  return newArr;
+};
+
  
 
 
@@ -55,12 +59,13 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 const addPurchases = (arr) => {
   // Solution code here...
-  let newArr= [];
-  newArr=arr.reduce((item,value)=>{
-    item = item+value ;
-  });
 
-   return newArr;
+  let newArr =[]
+  newArr = arr.reduce((item,value)=>{
+    return item + value.purchasePrice 
+  },0)
+
+   return newArr
   
 
 
@@ -75,11 +80,14 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  let newArr=[];
-  newArr= arr.reduce(number=>number+1)
-  // Solution code here...;
+  // Solution code here...
+  return (
+    arr.reduce(number=>{
+    number=number+1;
+    return number
+  },0)
+  )
 
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -157,8 +165,10 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+
   let newArr=[];
-  newArr=string .split('');
+  newArr=str.split('');
+
   let reversed=newArr.reduce((acc,val)=>{
   return val+acc
 })
